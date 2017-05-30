@@ -1,3 +1,7 @@
+// creates a server
+// reads a file, mainly checks for a file, if not found, shows error
+// if found then writes and shows the html data of that file in the output
+
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
