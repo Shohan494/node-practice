@@ -3,6 +3,8 @@ console.log("Starting app.js");
 // module require
 const fs = require("fs");
 const os = require("os");
+// lodash documentation way
+const _ = require("lodash");
 
 // relative require
 const notes = require("./notes.js");
@@ -12,7 +14,6 @@ const notes = require("./notes.js");
 console.log('Result:', notes.add(2, -3));
 
 // var user = os.userInfo();
-
 // console.log(user);
 
 // way 1.0 (ES6)
