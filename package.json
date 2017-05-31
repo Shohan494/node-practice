@@ -5,6 +5,7 @@
   "main": "assert.js",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "child_process": "^1.0.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "irc": "^0.5.2",
