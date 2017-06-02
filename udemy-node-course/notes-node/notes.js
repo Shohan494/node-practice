@@ -10,10 +10,21 @@ module.exports.add = (a, b) => {
 	return a + b;
 };
 
+const fs = require('fs');
+
 // yargs work
 // works in cli command : node index add --title=secret --body="This is my secret"    
 var addNote = (title, body) => {
 	console.log('Adding note', title, body);
+	var notes = [];
+	var note = {
+		title,
+		body
+	}
+
+  notes.push(note);
+  fs.writeFileSync('notebook.json', JSON.stringify(notes));
+
 };
 
 var getAll = () => {
