@@ -1,4 +1,7 @@
 ## node engine can create much faster machine code ( v8 engine )
 ## node is a js runtime that uses the v8 engine, v8 is written in c++
 ## v8 converts the code to machine code
-## 
+
+## learned about using arguments/user inputs as process.argv and yargs
+## const argv = yargs.argv is one of the best way for user input argument parsing
+## var command = process.argv[2] or alternative way is: var command = argv._[0];
