@@ -24,6 +24,10 @@ var getNote = (title) => {
 	console.log('Getting note', title)
 };
 
+var removeNote = (title) => {
+	console.log('Removing note', title)
+};
+
 // exporting in a different way
 module.exports = {
 	// addNote: addNote
@@ -31,5 +35,6 @@ module.exports = {
 	// es6 way
 	addNote,
 	getAll,
-	getNote
+	getNote,
+	removeNote
 };
