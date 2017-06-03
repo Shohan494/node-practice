@@ -14,3 +14,11 @@
 
 #### -modified previous version of code with re-usable functions and in a proper way to handle error messages
 #### -basically creating and saving notes has been done properly
+#### -remove a single note funtion - understanding this function, here (note) is not any variable or anything else, it defines individual items in the array:
+    var filteredNotes = notes.filter((note) => note.title != title);
+#### also they are alternatives between them: 
+		var filteredNotes = notes.filter((note) => note.title != title);
+is same as:	
+		var filteredNotes = notes.filter((note) => {
+			return note.title != title;
+		});

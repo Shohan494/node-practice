@@ -30,6 +30,7 @@ var saveNotes = (notes) => {
 // works in cli command : node index add --title=secret --body="This is my secret"    
 var addNote = (title, body) => {
 	console.log('Adding Note Function has been Called');
+	// fetching notes as string
 	var notes = fetchNotes();
 	var note = {
 		title,
@@ -49,7 +50,6 @@ var addNote = (title, body) => {
 		saveNotes(notes);
 		return note;
 	}
-
 };
 
 var getAll = () => {
@@ -57,11 +57,24 @@ var getAll = () => {
 };
 
 var getNote = (title) => {
-	console.log('Getting note', title)
+	console.log('Getting note', title);
 };
 
 var removeNote = (title) => {
-	console.log('Removing note', title)
+	console.log('Remove Note Function has been called');
+	console.log('Removing this note of title:', title);
+	// fetching notes as string
+	var notes = fetchNotes();
+	console.log(notes);
+	// understand the function, here (note) is not any variable or anything else
+	// it defines individual items in the array
+	var filteredNotes = notes.filter((note) => note.title != title);
+	/* same as above one
+	var filteredNotes = notes.filter((note) => {
+		return note.title != title;
+	});
+	*/
+	saveNotes(filteredNotes);
 };
 
 // exporting in a different way
