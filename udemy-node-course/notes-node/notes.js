@@ -47,10 +47,8 @@ var addNote = (title, body) => {
 		notes.push(note);
 		saveNotes(notes);
 		return note;
-	} else {
-		console.log('Duplicate title found!');
 	}
-
+	
 };
 
 var getAll = () => {

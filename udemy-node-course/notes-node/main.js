@@ -20,7 +20,17 @@ console.log('Process', process.argv);
 console.log('Yargs', argv);
 
 if (command === 'add'){
-	notes.addNote(argv.title, argv.body);
+	var note = notes.addNote(argv.title, argv.body);
+	if(note){
+		console.log('New Note Created Successfully!');
+		console.log('--');
+		console.log(`Title: ${note.title}`);
+		console.log(`Body: ${note.body}`);
+	} else {
+		console.log('Problem Occured!');
+		console.log("May be you haven't passed the arguments in the proper way");
+		console.log("Or May be there were duplicate title found, let's try again");
+	}
 } else if (command === 'list') {
 	notes.getAll();
 } else if (command === 'read') {
