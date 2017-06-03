@@ -43,7 +43,6 @@ var addNote = (title, body) => {
 		return note.title === title;
 	});
 	*/
-
 	// watch over this Function Return
 	if(duplicateNotes.length === 0){
 		notes.push(note);

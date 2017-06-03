@@ -21,7 +21,7 @@ console.log('Yargs', argv);
 
 if (command === 'add'){
 	var note = notes.addNote(argv.title, argv.body);
-	if(note){
+	if (note) {
 		console.log('New Note Created Successfully!');
 		console.log('--');
 		console.log(`Title: ${note.title}`);
@@ -30,7 +30,8 @@ if (command === 'add'){
 		console.log('Problem Occured!');
 		console.log("May be you haven't passed the arguments in the proper way");
 		console.log("Or May be there were duplicate title found, let's try again");
-	}
+	} 
+
 } else if (command === 'list') {
 	notes.getAll();
 } else if (command === 'read') {
