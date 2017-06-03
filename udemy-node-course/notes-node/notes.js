@@ -9,38 +9,46 @@ module.exports.add = (a, b) => {
 };
 
 const fs = require('fs');
-// yargs work
-// works in cli command : node index add --title=secret --body="This is my secret"    
-var addNote = (title, body) => {
-	console.log('Adding Note Function has been Called');
-	var notes = [];
-	var note = {
-		title,
-		body
-	};
 
+var fetchNotes = () => {
 	try {
 		// important task is happening here
 		// each time it has been called and storing the notes each 
 		// time with reading and then storing the file 
 		var noteAsString = fs.readFileSync('notebook.json');
-		notes = JSON.parse(noteAsString);
-
+		return JSON.parse(noteAsString);
 	} catch(e) {
-
+		return [];
 	}
+};
+
+var saveNotes = (notes) => {
+	fs.writeFileSync('notebook.json', JSON.stringify(notes));
+};
+
+// yargs work
+// works in cli command : node index add --title=secret --body="This is my secret"    
+var addNote = (title, body) => {
+	console.log('Adding Note Function has been Called');
+	var notes = fetchNotes();
+	var note = {
+		title,
+		body
+	};
 
   var duplicateNotes = notes.filter((note) => note.title === title);
-
-/* same as above one
+	/* same as above one
 	var duplicateNotes = notes.filter((note) => {
 		return note.title === title;
 	});
-*/
+	*/
 
 	if(duplicateNotes.length === 0){
 		notes.push(note);
-	  fs.writeFileSync('notebook.json', JSON.stringify(notes));
+		saveNotes(notes);
+		return note;
+	} else {
+		console.log('Duplicate title found!');
 	}
 
 };
