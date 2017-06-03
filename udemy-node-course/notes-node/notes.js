@@ -43,12 +43,13 @@ var addNote = (title, body) => {
 	});
 	*/
 
+	// watch over this Function Return
 	if(duplicateNotes.length === 0){
 		notes.push(note);
 		saveNotes(notes);
 		return note;
 	}
-	
+
 };
 
 var getAll = () => {

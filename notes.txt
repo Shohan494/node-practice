@@ -8,3 +8,6 @@
 
 ## using filesystem to read and write json file along with converting json/string
 ## using simple array, notes as json data added to a file and also checked if the file has duplicate notes or not
+
+## modified previous version of code with re-usable functions and in a proper way to handle error messages
+## basically creating and saving notes has been done properly
