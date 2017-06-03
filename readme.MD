@@ -16,6 +16,7 @@
 #### -basically creating and saving notes has been done properly
 #### -remove a single note funtion - understanding this function, here (note) is not any variable or anything else, it defines individual items in the array:
     var filteredNotes = notes.filter((note) => note.title != title);
+<<<<<<< HEAD
 #### -also they are alternatives between them: 
 		var filteredNotes = notes.filter((note) => note.title != title);
 is same as:	
@@ -26,3 +27,11 @@ is same as:
 		var noteRemoved = notes.removeNote(argv.title);
 		var message = noteRemoved ? 'Note was Removed' : 'Note not found';
 if the boolean is true first value is set, otherwise it will be the another one
+=======
+#### -also they are alternatives between them:
+    var filteredNotes = notes.filter((note) => note.title != title);
+    // same as
+    var filteredNotes = notes.filter((note) => {
+        return note.title != title;
+    });
+>>>>>>> e2be3a21f804f494e2652cfd023f752f05cb3861
