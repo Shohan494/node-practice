@@ -74,6 +74,7 @@ var removeNote = (title) => {
 	});
 	*/
 	saveNotes(filteredNotes);
+	return notes.length != filteredNotes.length
 };
 
 // exporting in a different way
