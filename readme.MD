@@ -29,5 +29,8 @@ is same as:
 #### -need to get used to this: the first variable returns a boolean(true or false), the next is taking some decisions depending on that boolean.
 		var noteRemoved = notes.removeNote(argv.title);
 		var message = noteRemoved ? 'Note was Removed' : 'Note not found';
-if the boolean is true first value is set, otherwise it will be the another one
+#### -if the boolean is true first value is set, otherwise it will be the another one
+
+#### -read a single note from a title arguments works fine
+#### filter method always returns an array
 
