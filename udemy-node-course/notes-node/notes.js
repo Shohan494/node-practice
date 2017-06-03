@@ -56,7 +56,17 @@ var getAll = () => {
 };
 
 var getNote = (title) => {
-	console.log('Getting note', title);
+	console.log('Remove Note Function has been called');
+	console.log('Getting note by title name:', title);
+	// fetching notes as string
+	var notes = fetchNotes();
+	var gettingNote = notes.filter((note) => note.title === title);
+	/* same as above one
+	var gettingNote = notes.filter((note) => {
+		return note.title === title;
+	});
+	*/
+	return gettingNote[0];
 };
 
 var removeNote = (title) => {
@@ -74,7 +84,7 @@ var removeNote = (title) => {
 	});
 	*/
 	saveNotes(filteredNotes);
-	return notes.length != filteredNotes.length
+	return notes.length != filteredNotes.length;
 };
 
 // exporting in a different way
